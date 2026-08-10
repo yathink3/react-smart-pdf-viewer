@@ -1,0 +1,15 @@
+{
+  "jsxSingleQuote": true,
+  "bracketSpacing": true,
+  "singleQuote": true,
+  "bracketSameLine": true,
+  "jsxBracketSameLine": true,
+  "trailingComma": "es5",
+  "printWidth": 145,
+  "tabWidth": 2,
+  "proseWrap": "never",
+  "arrowParens": "avoid",
+  "sortPackageJson": false,
+  "ignorePatterns": ["*.min.js", "*.min.css"],
+  "-objectWrap": "collapse"
+}
