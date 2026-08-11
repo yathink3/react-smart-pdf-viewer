@@ -1,6 +1,6 @@
 {
   "name": "react-smart-pdf-viewer",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "type": "module",
   "keywords": [
     "pdf",
@@ -11,8 +11,12 @@
     "xls-to-pdf"
   ],
   "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "./dist/index.js",
+    "./src/index.jsx"
+  ],
   "exports": {
     ".": "./dist/index.js",
     "./plugins": "./dist/plugins.js",

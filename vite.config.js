@@ -34,7 +34,7 @@ export default defineConfig({
         "react-dom",
         "react/jsx-runtime"
       ],
-     output: {
+      output: {
         // Provide global variables for UMD to use when finding external dependencies
         globals: {
           react: "React",
@@ -42,6 +42,13 @@ export default defineConfig({
           "react/jsx-runtime": "jsxRuntime",
         },
         exports: "named",
+        manualChunks(id) {
+          if (id.includes('node_modules/xlsx')) return 'xlsx';
+          if (id.includes('node_modules/mammoth')) return 'mammoth';
+          if (id.includes('node_modules/jspdf')) return 'jspdf';
+          if (id.includes('node_modules/html2canvas')) return 'html2canvas';
+          if (id.includes('node_modules/@bundled-es-modules/pdfjs-dist')) return 'pdfjs';
+        }
       },
     },
   },
