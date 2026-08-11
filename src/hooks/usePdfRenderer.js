@@ -28,7 +28,8 @@ export const usePdfRenderer = ({
         const loadingTask = pdfjs.getDocument(internalPdfUrl);
         const pdf = await loadingTask.promise;
         const metadata = await pdf.getMetadata();
-        setPdfTitle(metadata.info?.Title || '');
+        const info = /** @type {any} */ (metadata.info);
+        setPdfTitle(info?.Title || '');
         
         const totalPages = Math.min(pdf.numPages, maxPages);
         setPageCount(totalPages);
@@ -56,7 +57,7 @@ export const usePdfRenderer = ({
           const tempCanvas = document.createElement('canvas');
           tempCanvas.width = renderViewport.width;
           tempCanvas.height = renderViewport.height;
-          await page.render({ canvasContext: tempCanvas.getContext('2d'), viewport: renderViewport }).promise;
+          await page.render({ canvasContext: /** @type {CanvasRenderingContext2D} */ (tempCanvas.getContext('2d')), viewport: renderViewport }).promise;
 
           const getVerticalCrop = canvas => {
             const ctx = canvas.getContext('2d');

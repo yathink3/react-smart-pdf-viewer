@@ -82,7 +82,7 @@ export const CanvasViewer = ({
             <div className={`pdf-pages-container ${isLoading ? 'hidden' : ''}`.trim()}>
               {Array.from({ length: pageCount }, (_, i) => (
                 <div key={`p-${i}`} data-page-index={i} className={`pdf-page-wrapper ${isOpenable ? 'openable' : ''}`.trim()}>
-                  <canvas ref={el => (mainRefs.current[i] = { current: el })} className="pdf-page-canvas" />
+                  <canvas ref={el => { mainRefs.current[i] = { current: el }; }} className="pdf-page-canvas" />
                   <div className="pdf-link-overlay-container">
                     {linkOverlays[i]?.map(link => (
                       <a key={link.key} href={link.url} title={link.url} target="_blank" rel="noopener noreferrer" className="pdf-link-overlay" style={link.style} />
@@ -112,7 +112,7 @@ export const CanvasViewer = ({
       <div className={`pdf-canvas-mode-pages ${isLoading ? 'hidden' : ''}`.trim()}>
         {Array.from({ length: pageCount }, (_, i) => (
           <div key={`canvas-p-${i}`} className="pdf-canvas-mode-wrapper">
-            <canvas ref={el => (mainRefs.current[i] = { current: el })} className="pdf-canvas-mode-canvas" />
+            <canvas ref={el => { mainRefs.current[i] = { current: el }; }} className="pdf-canvas-mode-canvas" />
             <div className="pdf-link-overlay-container">
               {linkOverlays[i]?.map(link => (
                 <a key={link.key} href={link.url} title={link.url} target="_blank" rel="noopener noreferrer" className="pdf-link-overlay" style={link.style} />

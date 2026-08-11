@@ -16,7 +16,7 @@ export const PdfSidebar = ({
           className={`pdf-thumb-wrapper ${activePageIndex === i ? 'active' : ''}`.trim()}
         >
           <canvas
-            ref={el => (thumbRefs.current[i] = { current: el })}
+            ref={el => { thumbRefs.current[i] = { current: el }; }}
             className="pdf-thumb-canvas"
           />
           <div className="pdf-thumb-label">

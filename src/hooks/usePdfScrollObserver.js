@@ -12,7 +12,7 @@ export const usePdfScrollObserver = (pageCount, viewMode, mainContainerRef, main
       if (isScrollingRef.current) return;
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const index = parseInt(entry.target.getAttribute('data-page-index'));
+          const index = parseInt(entry.target.getAttribute('data-page-index') || '0');
           setActivePageIndex(index);
         }
       });

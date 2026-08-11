@@ -11,7 +11,8 @@ export const usePdfMetadata = (internalPdfUrl, shouldFetch) => {
           const loadingTask = pdfjs.getDocument(internalPdfUrl);
           const pdf = await loadingTask.promise;
           const metadata = await pdf.getMetadata();
-          setPdfTitle(metadata.info?.Title || '');
+          const info = /** @type {any} */ (metadata.info);
+          setPdfTitle(info?.Title || '');
         } catch (err) {
           console.error('Error loading PDF metadata:', err);
         }
