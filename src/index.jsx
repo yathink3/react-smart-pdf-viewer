@@ -6,7 +6,7 @@ import { usePdfMetadata } from './hooks/usePdfMetadata';
 import { downloadFile } from './utils/downloadFile';
 import { NativeViewer } from './components/NativeViewer';
 import { CanvasViewer } from './components/CanvasViewer';
-import { embeddedStyles } from './styles';
+import embeddedStyles from './styles.css?inline';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
