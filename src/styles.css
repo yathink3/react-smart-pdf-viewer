@@ -223,6 +223,11 @@
   pointer-events: auto;
 }
 
+.pdf-canvas-mode {
+  position: relative;
+  overflow: hidden;
+}
+
 .pdf-canvas-mode-wrapper {
   position: relative;
   margin: 0 auto 24px auto;
